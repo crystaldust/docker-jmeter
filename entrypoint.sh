@@ -19,6 +19,9 @@ echo "jmeter args=$@"
 jmeter $@
 echo "END Running Jmeter on `date`"
 
+echo "Uploading result"
+/upload.sh
+
 #     -n \
 #    -t "/tests/${TEST_DIR}/${TEST_PLAN}.jmx" \
 #    -l "/tests/${TEST_DIR}/${TEST_PLAN}.jtl"
