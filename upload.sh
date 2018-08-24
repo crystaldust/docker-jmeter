@@ -36,4 +36,4 @@ jmeter -g $report_path -o dashboard
 cp $report_path ./report.jtl
 
 tar zcf ${now_str}_upload.tgz ./report.jtl ./dashboard/
-curl -X POST --data-binary @./"${now_str}"_upload.tgz -H "testname: $testname" http://$upload_server/upload
+curl -X POST --data-binary @./"${now_str}"_upload.tgz -H "testname: $testname" -H "tag: $UPLOAD_TAG" http://$upload_server/upload
